@@ -28,27 +28,27 @@ declare global {
          * The absolute UI5 Identifier, including all information (getId())
          */
         ui5AbsoluteId?: string
-    };
+    }
 
     interface UI5BindingDefProperty {
         path: string
-    };
+    }
 
     interface UI5PropertyDefMetadata {
         [property: string]: string | number | boolean;
-    };
+    }
 
     interface UI5BindingDefMetadata {
         [binding: string]: UI5BindingDefProperty
-    };
+    }
 
     interface UI5SelectorDefMetadata {
         elementName?: string,
         componentName?: string
-    };
+    }
 
     interface UI5SelectorDefChildren {
-    };
+    }
 
 
     interface UI5SelectorDef {
@@ -107,7 +107,7 @@ declare global {
          */
         parentL4?: UI5SelectorDef,
         children?: UI5SelectorDef[]
-    };
+    }
 
     type UI5SelectorCallback = ({ element }: { element: any; }) => UI5SelectorDef;
 
@@ -121,23 +121,23 @@ declare global {
          * t.expect( UI5Selector("id").getUI5(function(e) { return e.property.selectedKey }).eql(3) )
          */
         getUI5(filter?: UI5SelectorCallback): UI5SelectorDef;
-    };
+    }
 
     interface SupportAssistantResultLine {
         context: string,
         details: string
-    };
+    }
 
     interface SupportAssistantResult {
         High: SupportAssistantResultLine[];
         Medium: SupportAssistantResultLine[];
         Low: SupportAssistantResultLine[];
-    };
+    }
 
     interface Utils {
         launchpadLogin(t: TestController, userName: string, password: string) : void;
         supportAssistant(t: TestController, componentNamem?: string): SupportAssistantResult;
-    };
+    }
 }
 
 export var utils: Utils   
